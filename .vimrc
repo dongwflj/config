@@ -6,7 +6,8 @@ endif
 
 set tags=tags;
 set autochdir
-
+" Disable preview window when c complete
+set completeopt=longest,menu
 if has("syntax")
     syntax on
 endif
@@ -22,7 +23,8 @@ set expandtab
 " Windows style char align
 set tabstop=4 shiftwidth=4 
 set cindent
-"set foldmethod=indent
+set foldmethod=manual
+set foldcolumn =4
 "set nowrap
 set hlsearch
 set incsearch
@@ -79,3 +81,22 @@ nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
 nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-\>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+let g:DoxygenToolkit_briefTag_funcName = "yes"
+
+" for C++ style, change the '@' to '\'
+let g:DoxygenToolkit_commentType = "C++"
+let g:DoxygenToolkit_briefTag_pre = "\\brief "
+let g:DoxygenToolkit_templateParamTag_pre = "\\tparam "
+let g:DoxygenToolkit_paramTag_pre = "\\param "
+let g:DoxygenToolkit_returnTag = "\\return "
+let g:DoxygenToolkit_throwTag_pre = "\\throw " " @exception is also valid
+let g:DoxygenToolkit_fileTag = "\\file "
+let g:DoxygenToolkit_dateTag = "\\date "
+let g:DoxygenToolkit_authorTag = "\\author "
+let g:DoxygenToolkit_versionTag = "\\version "
+let g:DoxygenToolkit_blockTag = "\\name "
+let g:DoxygenToolkit_classTag = "\\class "
+let g:DoxygenToolkit_authorName = "Ewen Dong, dongwflj@163.com"
+let g:doxygen_enhanced_color = 1
+"let g:load_doxygen_syntax = 1
