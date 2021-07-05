@@ -4,7 +4,7 @@ else
     let g:vimrc_iswindows=0
 endif
 
-set tags=tags;
+set tags=./tags,tags;
 set autochdir
 " Disable preview window when c complete
 set completeopt=longest,menu
